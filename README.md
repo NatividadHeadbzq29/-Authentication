@@ -1,0 +1,2 @@
+# -Authentication
+ Wait for the Reply         ConsoleWrite("Waiting for the reply ... " &amp; @CRLF)         While 1              $sBuff = TCPRecv($socket,10,1)             If @error Then ExitLoop             If StringLen($sBuff) > 0 Then ExitLoop              Sleep(100)         WEnd          ConsoleWrite(@CRLF &amp; "!   Reply: " &amp; $sBuff &amp; @CRLF)         If StringRight($sBuff, 2) = "00" Then ; Authentication successful
